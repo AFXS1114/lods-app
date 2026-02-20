@@ -80,7 +80,7 @@ function CustomerDrawerNavigator() {
       }}
     >
       <Drawer.Screen 
-        name="CustomerHome" 
+        name="CustomerProfile" 
         component={CustomerProfileScreen} 
         options={{ title: "My Profile" }} 
       />
