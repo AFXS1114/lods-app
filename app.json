@@ -1,14 +1,18 @@
 {
   "expo": {
-    "name": "LODSApp",
+    "name": "LODS Bulan",
     "slug": "LODSApp",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",
     "userInterfaceStyle": "automatic",
-    //"newArchEnabled": false, 
-    "ios": { "supportsTablet": true },
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.afxs1114.lodsapp"
+    },
     "android": {
+      "package": "com.afxs1114.lodsapp",
+      "googleServicesFile": "./google-services.json",
       "adaptiveIcon": {
         "backgroundColor": "#E6F4FE",
         "foregroundImage": "./assets/images/android-icon-foreground.png"
@@ -24,6 +28,11 @@
           "backgroundColor": "#ffffff"
         }
       ]
-    ]
+    ],
+    "extra": {
+      "eas": {
+        "projectId": "6532572d-11e4-4727-a687-2a5b0b7ec623"
+      }
+    }
   }
 }

@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "319912452042",
+    "project_id": "lods-app-845f7",
+    "storage_bucket": "lods-app-845f7.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:319912452042:android:77d19c70a7423208b4f933",
+        "android_client_info": {
+          "package_name": "com.afxs1114.lodsapp"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBGZsmK6yFdCUpTgyomDZ6nwum4iydT08Q"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

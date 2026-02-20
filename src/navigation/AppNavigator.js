@@ -167,6 +167,11 @@ export default function AppNavigator({ user, role }) {
                   component={CreateOrderScreen} 
                   options={{ title: "New Order" }} 
                 />
+                   <Stack.Screen 
+                  name="MyOrders" 
+                  component={CustomerHomeScreen} 
+                  options={{ title: "New Order" }} 
+                />
               </>
             )}
           </>
