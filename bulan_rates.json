@@ -1,0 +1,542 @@
+[
+  {
+    "LOCATION": "A. Bonifacio (Tinurilan)",
+    "DISTANCE": "7 km",
+    "DELIVERY FEE": "105"
+  },
+  {
+    "LOCATION": "Abad Santos (Kambal)",
+    "DISTANCE": "10 km",
+    "DELIVERY FEE": "150"
+  },
+  {
+    "LOCATION": "Aguinaldo (Lipata Dako)",
+    "DISTANCE": "21 km",
+    "DELIVERY FEE": "350"
+  },
+  {
+    "LOCATION": "Antipolo via inararan road",
+    "DISTANCE": "8 km",
+    "DELIVERY FEE": "120"
+  },
+  {
+    "LOCATION": "             Via calomagon road",
+    "DISTANCE": "10 km",
+    "DELIVERY FEE": "150"
+  },
+  {
+    "LOCATION": "Aquino (Imelda)",
+    "DISTANCE": ".30 km",
+    "DELIVERY FEE": "39"
+  },
+  {
+    "LOCATION": "            Sitio layuan",
+    "DISTANCE": "3 km",
+    "DELIVERY FEE": "50"
+  },
+  {
+    "LOCATION": "            Layuan nature park/nido verde",
+    "DISTANCE": "5 km",
+    "DELIVERY FEE": "75"
+  },
+  {
+    "LOCATION": "            Sitio Uyango",
+    "DISTANCE": "2 km",
+    "DELIVERY FEE": "45"
+  },
+  {
+    "LOCATION": "Bical",
+    "DISTANCE": "14 km",
+    "DELIVERY FEE": "210"
+  },
+  {
+    "LOCATION": "Beguin",
+    "DISTANCE": "8 km",
+    "DELIVERY FEE": "120"
+  },
+  {
+    "LOCATION": "Beguin Daan",
+    "DISTANCE": "11 km",
+    "DELIVERY FEE": "165"
+  },
+  {
+    "LOCATION": "Bonga",
+    "DISTANCE": "17 km",
+    "DELIVERY FEE": "255"
+  },
+  {
+    "LOCATION": "           Kapehan sa Bulod",
+    "DISTANCE": "18 km",
+    "DELIVERY FEE": "270"
+  },
+  {
+    "LOCATION": "Butag",
+    "DISTANCE": "14 km",
+    "DELIVERY FEE": "220"
+  },
+  {
+    "LOCATION": "           Sitio Angas",
+    "DISTANCE": "15 km",
+    "DELIVERY FEE": "240"
+  },
+  {
+    "LOCATION": "           Sitio Lumacao",
+    "DISTANCE": "16 km",
+    "DELIVERY FEE": "260"
+  },
+  {
+    "LOCATION": "           Butag National High School",
+    "DISTANCE": "16 km",
+    "DELIVERY FEE": "260"
+  },
+  {
+    "LOCATION": "Cadandanan",
+    "DISTANCE": "13 km",
+    "DELIVERY FEE": "195"
+  },
+  {
+    "LOCATION": "Calomagon",
+    "DISTANCE": "7 km",
+    "DELIVERY FEE": "105"
+  },
+  {
+    "LOCATION": "           Eco Park/22nd infantry",
+    "DISTANCE": "8 km",
+    "DELIVERY FEE": "120"
+  },
+  {
+    "LOCATION": "           Sitio Buntay",
+    "DISTANCE": "5 km",
+    "DELIVERY FEE": "85"
+  },
+  {
+    "LOCATION": "           Sitio Pinaradan",
+    "DISTANCE": "9 km",
+    "DELIVERY FEE": "85"
+  },
+  {
+    "LOCATION": "Calpi",
+    "DISTANCE": "12 km",
+    "DELIVERY FEE": "220"
+  },
+  {
+    "LOCATION": "           Sitio Sabang",
+    "DISTANCE": "13 km",
+    "DELIVERY FEE": "200"
+  },
+  {
+    "LOCATION": "Cocok-Cabitan",
+    "DISTANCE": "17 km",
+    "DELIVERY FEE": "270"
+  },
+  {
+    "LOCATION": "Daganas (via beguin rd.)",
+    "DISTANCE": "13 km",
+    "DELIVERY FEE": "210"
+  },
+  {
+    "LOCATION": "                 Via polot rd.",
+    "DISTANCE": "14 km",
+    "DELIVERY FEE": "230"
+  },
+  {
+    "LOCATION": "Danao (via Calomagon rd)",
+    "DISTANCE": "16 km",
+    "DELIVERY FEE": "300"
+  },
+  {
+    "LOCATION": "Dolos",
+    "DISTANCE": "16 km",
+    "DELIVERY FEE": "270"
+  },
+  {
+    "LOCATION": "E. Quirino (Pinangomhan)",
+    "DISTANCE": "9 km",
+    "DELIVERY FEE": "150"
+  },
+  {
+    "LOCATION": "Fabrica",
+    "DISTANCE": "5 km",
+    "DELIVERY FEE": "75"
+  },
+  {
+    "LOCATION": "               Sitio Bliss",
+    "DISTANCE": "4 km",
+    "DELIVERY FEE": "65"
+  },
+  {
+    "LOCATION": "G. Del Pilar (Tanga)",
+    "DISTANCE": "8 km",
+    "DELIVERY FEE": "120"
+  },
+  {
+    "LOCATION": "Gate",
+    "DISTANCE": "13 km",
+    "DELIVERY FEE": "220"
+  },
+  {
+    "LOCATION": "Inararan (via j.p. laurel)",
+    "DISTANCE": "6 km",
+    "DELIVERY FEE": "96"
+  },
+  {
+    "LOCATION": "                Via calomagon rd.",
+    "DISTANCE": "9 km",
+    "DELIVERY FEE": "135"
+  },
+  {
+    "LOCATION": "J. Gerona (Biton)",
+    "DISTANCE": "18 km",
+    "DELIVERY FEE": "310"
+  },
+  {
+    "LOCATION": "                Biton beach",
+    "DISTANCE": "19 km",
+    "DELIVERY FEE": "345"
+  },
+  {
+    "LOCATION": "J.P. Laurel (Pon-od)",
+    "DISTANCE": "3 km",
+    "DELIVERY FEE": "65"
+  },
+  {
+    "LOCATION": "                    JP laurel 2 basketball court",
+    "DISTANCE": "5 km",
+    "DELIVERY FEE": "75"
+  },
+  {
+    "LOCATION": "Jamorawon (via Beguin rd.)",
+    "DISTANCE": "10 km",
+    "DELIVERY FEE": "180"
+  },
+  {
+    "LOCATION": "                      Via Polot rd.",
+    "DISTANCE": "11 km",
+    "DELIVERY FEE": "180"
+  },
+  {
+    "LOCATION": "Libertad (Calle Putol)",
+    "DISTANCE": "1 km",
+    "DELIVERY FEE": "39"
+  },
+  {
+    "LOCATION": "Lajong",
+    "DISTANCE": "5 km",
+    "DELIVERY FEE": "75"
+  },
+  {
+    "LOCATION": "ICS",
+    "DISTANCE": "3 km",
+    "DELIVERY FEE": "55"
+  },
+  {
+    "LOCATION": "                      Sitio Pawa",
+    "DISTANCE": "4 km",
+    "DELIVERY FEE": "55"
+  },
+  {
+    "LOCATION": "                      Nings/Bayoca/Pay Kilong",
+    "DISTANCE": "3 km",
+    "DELIVERY FEE": "50"
+  },
+  {
+    "LOCATION": "M. Roxas (Busay)",
+    "DISTANCE": "10 km",
+    "DELIVERY FEE": "150"
+  },
+  {
+    "LOCATION": "Magsaysay (Bongog)",
+    "DISTANCE": "9 km",
+    "DELIVERY FEE": "135"
+  },
+  {
+    "LOCATION": "                    Kawilihan Spring Resort",
+    "DISTANCE": "10 km",
+    "DELIVERY FEE": "160"
+  },
+  {
+    "LOCATION": "Managa-naga",
+    "DISTANCE": "1 km",
+    "DELIVERY FEE": "39"
+  },
+  {
+    "LOCATION": "Marinab",
+    "DISTANCE": "19 km",
+    "DELIVERY FEE": "320"
+  },
+  {
+    "LOCATION": "                    Canaway Village",
+    "DISTANCE": "20 km",
+    "DELIVERY FEE": "325"
+  },
+  {
+    "LOCATION": "                    Barbo Ocean View",
+    "DISTANCE": "20 km",
+    "DELIVERY FEE": "325"
+  },
+  {
+    "LOCATION": "Nasuje (via Inararan rd.)",
+    "DISTANCE": "8 km",
+    "DELIVERY FEE": "120"
+  },
+  {
+    "LOCATION": "                   Via Calomagon rd.",
+    "DISTANCE": "11 km",
+    "DELIVERY FEE": "165"
+  },
+  {
+    "LOCATION": "Montecalvario (via beguin rd.)",
+    "DISTANCE": "11 km",
+    "DELIVERY FEE": "195"
+  },
+  {
+    "LOCATION": "                           Via polot rd.",
+    "DISTANCE": "12 km",
+    "DELIVERY FEE": "200"
+  },
+  {
+    "LOCATION": "N. Roque (Calayugan)",
+    "DISTANCE": "9 km",
+    "DELIVERY FEE": "135"
+  },
+  {
+    "LOCATION": "Namo (via inararan road)",
+    "DISTANCE": "12 km",
+    "DELIVERY FEE": "190"
+  },
+  {
+    "LOCATION": "            Calomagon road",
+    "DISTANCE": "14 km",
+    "DELIVERY FEE": "210"
+  },
+  {
+    "LOCATION": "            Sitio Costranera (via inararan rd)",
+    "DISTANCE": "12 km",
+    "DELIVERY FEE": "190"
+  },
+  {
+    "LOCATION": "            Via calomagon road",
+    "DISTANCE": "16 km",
+    "DELIVERY FEE": "240"
+  },
+  {
+    "LOCATION": "Obrero",
+    "DISTANCE": ".95 km",
+    "DELIVERY FEE": "39"
+  },
+  {
+    "LOCATION": "Osmeña (Lipata Saday)",
+    "DISTANCE": "23 km",
+    "DELIVERY FEE": "380"
+  },
+  {
+    "LOCATION": "Otavi",
+    "DISTANCE": "8 km",
+    "DELIVERY FEE": "120"
+  },
+  {
+    "LOCATION": "             Sitio ilawod",
+    "DISTANCE": "9 km",
+    "DELIVERY FEE": "135"
+  },
+  {
+    "LOCATION": "Padre Diaz",
+    "DISTANCE": "15 km",
+    "DELIVERY FEE": "240"
+  },
+  {
+    "LOCATION": "Palale",
+    "DISTANCE": "10 km",
+    "DELIVERY FEE": "170"
+  },
+  {
+    "LOCATION": "Quezon (Cabarawan)",
+    "DISTANCE": "25 km",
+    "DELIVERY FEE": "400"
+  },
+  {
+    "LOCATION": "R. Gerona (Butag) (Via inararan rd.)",
+    "DISTANCE": "16 km",
+    "DELIVERY FEE": "250"
+  },
+  {
+    "LOCATION": "                                 Via calomagon rd",
+    "DISTANCE": "19 km",
+    "DELIVERY FEE": "285"
+  },
+  {
+    "LOCATION": "                                  Sitio inalapan",
+    "DISTANCE": "22 km",
+    "DELIVERY FEE": "360"
+  },
+  {
+    "LOCATION": "Recto",
+    "DISTANCE": "16 km",
+    "DELIVERY FEE": "270"
+  },
+  {
+    "LOCATION": "Sagrada",
+    "DISTANCE": "32 km",
+    "DELIVERY FEE": "530"
+  },
+  {
+    "LOCATION": "                 Sitio Tarhan",
+    "DISTANCE": "34 km",
+    "DELIVERY FEE": "50"
+  },
+  {
+    "LOCATION": "San Francisco (Polot)",
+    "DISTANCE": "8 km",
+    "DELIVERY FEE": "120"
+  },
+  {
+    "LOCATION": "Daan na Bisita",
+    "DISTANCE": "9 km",
+    "DELIVERY FEE": "140"
+  },
+  {
+    "LOCATION": "Sitio Liman via polot rd",
+    "DISTANCE": "10 km",
+    "DELIVERY FEE": "180"
+  },
+  {
+    "LOCATION": "San Isidro (Cabugaan)",
+    "DISTANCE": "11 km",
+    "DELIVERY FEE": "170"
+  },
+  {
+    "LOCATION": "                 Sitio Pawic",
+    "DISTANCE": "12 km",
+    "DELIVERY FEE": "199"
+  },
+  {
+    "LOCATION": "San Juan Bag-o",
+    "DISTANCE": "7 km",
+    "DELIVERY FEE": "120"
+  },
+  {
+    "LOCATION": "San Juan Daan",
+    "DISTANCE": "11 km",
+    "DELIVERY FEE": "170"
+  },
+  {
+    "LOCATION": "San Rafael (Togbongon)",
+    "DISTANCE": "7 km",
+    "DELIVERY FEE": "105"
+  },
+  {
+    "LOCATION": "San Ramon",
+    "DISTANCE": "10 km",
+    "DELIVERY FEE": "150"
+  },
+  {
+    "LOCATION": "                  Sitio Burabod",
+    "DISTANCE": "11 km",
+    "DELIVERY FEE": "165"
+  },
+  {
+    "LOCATION": "San Vicente",
+    "DISTANCE": "2 km",
+    "DELIVERY FEE": "48"
+  },
+  {
+    "LOCATION": "                  St Vincent subd",
+    "DISTANCE": "2.5 km",
+    "DELIVERY FEE": "48"
+  },
+  {
+    "LOCATION": "Santa Remedios Paraiso",
+    "DISTANCE": "2 km",
+    "DELIVERY FEE": "48"
+  },
+  {
+    "LOCATION": "                  Santa remedios gymnasium",
+    "DISTANCE": "4 km",
+    "DELIVERY FEE": "65"
+  },
+  {
+    "LOCATION": " Villa Las palmas",
+    "DISTANCE": "1 km",
+    "DELIVERY FEE": "39"
+  },
+  {
+    "LOCATION": "Santa Teresita (Trece)",
+    "DISTANCE": "14 km",
+    "DELIVERY FEE": "250"
+  },
+  {
+    "LOCATION": "Sigad",
+    "DISTANCE": "7 km",
+    "DELIVERY FEE": "105"
+  },
+  {
+    "LOCATION": "                 Sitio Bagong Silang",
+    "DISTANCE": "5 km",
+    "DELIVERY FEE": "75"
+  },
+  {
+    "LOCATION": "                 Sitio tarhan",
+    "DISTANCE": "6 km",
+    "DELIVERY FEE": "90"
+  },
+  {
+    "LOCATION": "Somagongsong",
+    "DISTANCE": "5 km",
+    "DELIVERY FEE": "75"
+  },
+  {
+    "LOCATION": "Taromata 1",
+    "DISTANCE": "12 km",
+    "DELIVERY FEE": "200"
+  },
+  {
+    "LOCATION": "Taromata 2",
+    "DISTANCE": "13 km",
+    "DELIVERY FEE": "220"
+  },
+  {
+    "LOCATION": "                Gabod",
+    "DISTANCE": "21 km",
+    "DELIVERY FEE": "340"
+  },
+  {
+    "LOCATION": "Zone 1 (Ilawod)",
+    "DISTANCE": ".55 km",
+    "DELIVERY FEE": "39"
+  },
+  {
+    "LOCATION": "Zone 2 (Sabang)",
+    "DISTANCE": ".50 km",
+    "DELIVERY FEE": "39"
+  },
+  {
+    "LOCATION": "Zone 3 (Central)",
+    "DISTANCE": ".54 km",
+    "DELIVERY FEE": "39"
+  },
+  {
+    "LOCATION": "Zone 4 (Central Business District)",
+    "DISTANCE": ".40 km",
+    "DELIVERY FEE": "39"
+  },
+  {
+    "LOCATION": "Zone 5 (Canipaan)",
+    "DISTANCE": ".24 km",
+    "DELIVERY FEE": "39"
+  },
+  {
+    "LOCATION": "Zone 6 (Baybay)",
+    "DISTANCE": ".50 km",
+    "DELIVERY FEE": "39"
+  },
+  {
+    "LOCATION": "Zone 7 (Iraya)",
+    "DISTANCE": ".39 km",
+    "DELIVERY FEE": "39"
+  },
+  {
+    "LOCATION": "Zone 8 (Loyo)",
+    "DISTANCE": ".95 km",
+    "DELIVERY FEE": "39"
+  }
+]
