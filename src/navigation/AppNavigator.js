@@ -9,6 +9,7 @@ import CustomDrawer from "./CustomDrawer";
 // Screens
 import CreateOrderScreen from "../screens/CreateOrderScreen";
 import CustomerHomeScreen from "../screens/CustomerHomeScreen";
+import CustomerProfileScreen from "../screens/CustomerProfileScreen";
 import LoginScreen from "../screens/LoginScreen";
 import ManagerDashboardScreen from "../screens/ManagerDashboardScreen";
 import ManageRiderScreen from "../screens/ManageRiderScreen";
@@ -80,10 +81,16 @@ function CustomerDrawerNavigator() {
     >
       <Drawer.Screen 
         name="CustomerHome" 
+        component={CustomerProfileScreen} 
+        options={{ title: "My Profile" }} 
+      />
+     <Drawer.Screen 
+        name="CustomerHome" 
         component={CustomerHomeScreen} 
         options={{ title: "My Orders" }} 
       />
     </Drawer.Navigator>
+
   );
 }
 
