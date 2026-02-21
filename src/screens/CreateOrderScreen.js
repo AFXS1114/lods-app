@@ -207,7 +207,7 @@ const styles = StyleSheet.create({
   title: { fontSize: 24, fontWeight: 'bold', color: COLORS.secondary, marginVertical: 20 },
   label: { fontSize: 14, fontWeight: 'bold', color: '#555', marginBottom: 8 },
   itemRow: { flexDirection: 'row', marginBottom: 10 },
-  input: { backgroundColor: '#fff', padding: 12, borderRadius: 8, borderWidth: 1, borderColor: '#ddd', fontSize: 16, color: '#000' },
+  input: { backgroundColor: '#fff', padding: 12, borderRadius: 8, borderWidth: 1, borderColor: '#ddd', fontSize: 16, color: '#000', transform: 'capitalize' },
   textArea: { height: 80, textAlignVertical: 'top', marginTop: 15 },
   addBtn: { padding: 12, alignItems: 'center', backgroundColor: '#f0f0f0', borderRadius: 8, marginTop: 5 },
   addBtnText: { color: COLORS.primary, fontWeight: 'bold' },

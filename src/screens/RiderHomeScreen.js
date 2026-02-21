@@ -1,6 +1,5 @@
 import { collection, doc, onSnapshot, query, updateDoc, where } from "firebase/firestore";
 import { useEffect, useState } from "react";
-// Added Linking to imports
 import { Alert, FlatList, Linking, ScrollView, StyleSheet, Text, TextInput, TouchableOpacity, View } from "react-native";
 import { auth, db } from "../firebase/firebaseConfig";
 import { globalStyles } from "../styles/globalStyles";
@@ -12,6 +11,7 @@ export default function RiderHomeScreen() {
   const [totalEarnings, setTotalEarnings] = useState(0);
 
   useEffect(() => {
+    // 1. Listen for Available (Pending) Orders
     const qAvailable = query(collection(db, "orders"), where("status", "==", "pending"));
     const unsubAvailable = onSnapshot(qAvailable, (snapshot) => {
       const orders = [];
@@ -19,6 +19,7 @@ export default function RiderHomeScreen() {
       setAvailableOrders(orders);
     });
 
+    // 2. Listen for current Rider's Active Order
     const qActive = query(
       collection(db, "orders"),
       where("riderId", "==", auth.currentUser.uid),
@@ -26,13 +27,14 @@ export default function RiderHomeScreen() {
     );
     const unsubActive = onSnapshot(qActive, (snapshot) => {
       if (!snapshot.empty) {
-        const doc = snapshot.docs[0];
-        setMyActiveOrder({ id: doc.id, ...doc.data() });
+        const docSnap = snapshot.docs[0];
+        setMyActiveOrder({ id: docSnap.id, ...docSnap.data() });
       } else {
         setMyActiveOrder(null);
       }
     });
 
+    // 3. Listen for Completed Orders for Earnings
     const qCompleted = query(
       collection(db, "orders"),
       where("riderId", "==", auth.currentUser.uid),
@@ -53,11 +55,10 @@ export default function RiderHomeScreen() {
     };
   }, []);
 
-  // --- NEW: CALL FUNCTION ---
   const makeCall = () => {
     const phoneNumber = myActiveOrder?.customerPhone;
     if (phoneNumber) {
-      Linking.openURL(`tel:${phoneNumber}`);
+      Linking.openURL(`tel:${phone}`); // Fixed typo here
     } else {
       Alert.alert("No Number", "Customer phone number not found in this order.");
     }
@@ -77,10 +78,13 @@ export default function RiderHomeScreen() {
   };
 
   const handlePriceUpdate = (index, price) => {
+    const cleanPrice = price.replace(/[^0-9.]/g, ''); 
     const updatedItems = [...myActiveOrder.items];
-    const unitPrice = parseFloat(price) || 0;
-    updatedItems[index].unitPrice = unitPrice;
+    const unitPrice = parseFloat(cleanPrice) || 0;
+
+    updatedItems[index].unitPrice = cleanPrice; 
     updatedItems[index].subtotal = unitPrice * (updatedItems[index].qty || 1);
+    
     setMyActiveOrder({ ...myActiveOrder, items: updatedItems });
   };
 
@@ -98,7 +102,6 @@ export default function RiderHomeScreen() {
 
       await updateDoc(orderRef, updateData);
     } catch (error) {
-      console.error(error);
       Alert.alert("Error", "Failed to update status.");
     }
   };
@@ -107,12 +110,15 @@ export default function RiderHomeScreen() {
     const itemsTotal = myActiveOrder.items?.reduce((sum, item) => sum + (item.subtotal || 0), 0) || 0;
     const runningTotal = itemsTotal + (myActiveOrder.deliveryFee || 0);
 
+    // Validation for shopping confirm button
+    const isShoppingIncomplete = myActiveOrder.status === 'shopping' && 
+      (itemsTotal <= 0 || myActiveOrder.items?.some(item => !item.unitPrice || parseFloat(item.unitPrice) <= 0));
+
     return (
       <ScrollView style={styles.activeOrderContainer}>
         <Text style={styles.activeTitle}>🏃 Current Job</Text>
         <View style={[globalStyles.card, styles.activeCard]}>
           
-          {/* --- UPDATED: CUSTOMER HEADER WITH CALL BUTTON --- */}
           <View style={styles.customerHeader}>
             <View style={{ flex: 1 }}>
               <Text style={styles.customerName}>{myActiveOrder.customerName || "User"}</Text>
@@ -125,12 +131,26 @@ export default function RiderHomeScreen() {
 
           <Text style={styles.currentStatus}>Status: {myActiveOrder.status.toUpperCase()}</Text>
 
+          {/* STEP 1: ACCEPTED */}
+          {myActiveOrder.status === 'accepted' && (
+            <TouchableOpacity 
+              style={[styles.statusBtn, { backgroundColor: COLORS.primary }]} 
+              onPress={() => updateStatus('shopping')}
+            >
+              <Text style={styles.btnText}>Start Shopping / Buy Items</Text>
+            </TouchableOpacity>
+          )}
+
+          {/* STEP 2: SHOPPING */}
           {myActiveOrder.status === 'shopping' && (
             <View style={styles.shoppingSection}>
               <Text style={styles.sectionHeader}>Enter Item Prices:</Text>
               {myActiveOrder.items?.map((item, index) => (
                 <View key={index} style={styles.itemRow}>
-                  <Text style={styles.itemName}>{item.name} (x{item.qty})</Text>
+                  <Text style={styles.itemName}>
+                    {item.name} (x{item.qty}) 
+                    {(!item.unitPrice || parseFloat(item.unitPrice) <= 0) && <Text style={{color: 'red'}}> *Req</Text>}
+                  </Text>
                   <View style={styles.priceInputWrapper}>
                     <Text>₱</Text>
                     <TextInput
@@ -149,36 +169,42 @@ export default function RiderHomeScreen() {
                 <Text>Fee: ₱{myActiveOrder.deliveryFee?.toFixed(2)}</Text>
                 <Text style={styles.totalText}>Total: ₱{runningTotal.toFixed(2)}</Text>
               </View>
+
+              <TouchableOpacity 
+                style={[
+                  styles.statusBtn, 
+                  { backgroundColor: isShoppingIncomplete ? '#BDBDBD' : '#2E7D32', marginTop: 15 } 
+                ]} 
+                onPress={() => {
+                  if (isShoppingIncomplete) {
+                    Alert.alert("Incomplete", "Please input prices for all items!");
+                  } else {
+                    updateStatus('delivery');
+                  }
+                }}
+                disabled={isShoppingIncomplete}
+              >
+                <Text style={styles.btnText}>
+                  {isShoppingIncomplete ? "Enter All Prices..." : "Confirm Prices & Deliver"}
+                </Text>
+              </TouchableOpacity>
             </View>
           )}
 
-          <View style={styles.actionButtons}>
-            {myActiveOrder.status === 'accepted' && (
-              <TouchableOpacity style={[styles.statusBtn, {backgroundColor: '#7B1FA2'}]} onPress={() => updateStatus('shopping')}>
-                <Text style={styles.btnText}>Start Shopping</Text>
-              </TouchableOpacity>
-            )}
-
-            {myActiveOrder.status === 'shopping' && (
-              <TouchableOpacity style={[styles.statusBtn, {backgroundColor: '#2E7D32'}]} onPress={() => updateStatus('delivery')}>
-                <Text style={styles.btnText}>Confirm Prices & Deliver</Text>
-              </TouchableOpacity>
-            )}
-
-            {myActiveOrder.status === 'delivery' && (
+          {/* STEP 3: DELIVERY */}
+          {myActiveOrder.status === 'delivery' && (
+            <View>
+              <View style={styles.summaryBox}>
+                 <Text style={styles.totalText}>Collect: ₱{myActiveOrder.finalTotal?.toFixed(2)}</Text>
+              </View>
               <TouchableOpacity 
-                style={[styles.statusBtn, {backgroundColor: COLORS.primary}]} 
-                onPress={() => {
-                  Alert.alert("Collect Payment", `Collect ₱${myActiveOrder.finalTotal?.toFixed(2)}`, [
-                    { text: "Cancel" },
-                    { text: "Paid & Delivered", onPress: () => updateStatus('completed') }
-                  ]);
-                }}
+                style={[styles.statusBtn, { backgroundColor: '#1976D2', marginTop: 15 }]} 
+                onPress={() => updateStatus('completed')}
               >
-                <Text style={styles.btnText}>Mark as Delivered</Text>
+                <Text style={styles.btnText}>Order Delivered & Paid</Text>
               </TouchableOpacity>
-            )}
-          </View>
+            </View>
+          )}
         </View>
       </ScrollView>
     );
@@ -223,25 +249,9 @@ const styles = StyleSheet.create({
   activeOrderContainer: { flex: 1 },
   activeTitle: { fontSize: 18, fontWeight: 'bold', color: COLORS.primary, marginBottom: 10 },
   activeCard: { borderLeftWidth: 5, borderLeftColor: COLORS.primary, padding: 15 },
-  
-  // --- NEW STYLES ---
-  customerHeader: { 
-    flexDirection: 'row', 
-    justifyContent: 'space-between', 
-    alignItems: 'center',
-    borderBottomWidth: 1,
-    borderBottomColor: '#eee',
-    paddingBottom: 10,
-    marginBottom: 10 
-  },
-  callButton: { 
-    backgroundColor: '#2E7D32', 
-    paddingVertical: 8, 
-    paddingHorizontal: 15, 
-    borderRadius: 20 
-  },
+  customerHeader: { flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', borderBottomWidth: 1, borderBottomColor: '#eee', paddingBottom: 10, marginBottom: 10 },
+  callButton: { backgroundColor: '#2E7D32', paddingVertical: 8, paddingHorizontal: 15, borderRadius: 20 },
   callButtonText: { color: '#fff', fontWeight: 'bold', fontSize: 14 },
-  
   customerName: { fontSize: 18, fontWeight: 'bold' },
   deliveryLoc: { fontSize: 14, color: '#666', marginVertical: 5 },
   currentStatus: { fontWeight: 'bold', color: COLORS.primary, marginBottom: 10 },
@@ -250,11 +260,11 @@ const styles = StyleSheet.create({
   itemRow: { flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', marginBottom: 10 },
   itemName: { flex: 1, fontSize: 14 },
   priceInputWrapper: { flexDirection: 'row', alignItems: 'center', borderBottomWidth: 1, borderColor: '#ccc' },
-  priceInput: { width: 60, padding: 5, color: '#000' },
+  priceInput: { width: 60, padding: 5, color: '#000', textAlign: 'right' },
   summaryBox: { marginTop: 15, borderTopWidth: 1, borderColor: '#ddd', paddingTop: 10 },
   totalText: { fontSize: 16, fontWeight: 'bold', color: '#2E7D32', marginTop: 5 },
-  actionButtons: { marginTop: 20, flexDirection: 'row' },
-  statusBtn: { padding: 15, borderRadius: 8, flex: 1, alignItems: 'center' },
+  actionButtons: { marginTop: 20 },
+  statusBtn: { padding: 15, borderRadius: 8, alignItems: 'center' },
   acceptBtn: { backgroundColor: COLORS.primary, padding: 12, borderRadius: 8, marginTop: 10, alignItems: 'center' },
   btnText: { color: '#fff', fontWeight: 'bold' },
   itemSummary: { fontSize: 16, fontWeight: 'bold' },

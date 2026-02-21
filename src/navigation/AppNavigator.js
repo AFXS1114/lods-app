@@ -170,7 +170,7 @@ export default function AppNavigator({ user, role }) {
                    <Stack.Screen 
                   name="MyOrders" 
                   component={CustomerHomeScreen} 
-                  options={{ title: "New Order" }} 
+                  options={{ title: "My Orders" }} 
                 />
               </>
             )}
