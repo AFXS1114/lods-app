@@ -165,17 +165,18 @@ export default function CustomerHomeScreen({ navigation }) {
             
             {selectedOrder && (
               <ScrollView style={styles.receiptScroll} showsVerticalScrollIndicator={false}>
-                
+  
                 <OrderTimeline status={selectedOrder.status} />
                 
                 <View style={styles.divider} />
                 
                 <Text style={styles.receiptHeader}>Items Breakdown:</Text>
-                {selectedOrder.itemsList?.map((item, index) => (
+                {/* Note: In your DB, the field is 'items', not 'itemsList' */}
+                {(selectedOrder.items || selectedOrder.itemsList)?.map((item, index) => (
                   <View key={index} style={styles.receiptRow}>
                     <Text style={styles.receiptItemName}>{item.qty}x {item.name}</Text>
                     <Text style={styles.receiptItemPrice}>
-                      ₱{((item.unitPrice || 0) * (item.qty || 1)).toFixed(2)}
+                      ₱{(parseFloat(item.subtotal || 0)).toFixed(2)}
                     </Text>
                   </View>
                 ))}
@@ -184,20 +185,21 @@ export default function CustomerHomeScreen({ navigation }) {
 
                 <View style={styles.summaryRow}>
                   <Text>Items Subtotal:</Text>
-                  <Text>₱{selectedOrder.itemPrice?.toFixed(2)}</Text>
+                  {/* Use totalItemsBill from your Firestore */}
+                  <Text>₱{(selectedOrder.totalItemsBill || 0).toFixed(2)}</Text>
                 </View>
                 
                 <View style={styles.summaryRow}>
                   <Text>Delivery Fee:</Text>
-                  <Text>₱{selectedOrder.deliveryFee?.toFixed(2)}</Text>
+                  <Text>₱{(selectedOrder.deliveryFee || 0).toFixed(2)}</Text>
                 </View>
 
                 <View style={[styles.summaryRow, styles.totalRow]}>
                   <Text style={styles.totalLabel}>Grand Total:</Text>
-                  <Text style={styles.totalValue}>₱{selectedOrder.totalDue?.toFixed(2)}</Text>
+                  {/* Use finalTotal from your Firestore */}
+                  <Text style={styles.totalValue}>₱{(selectedOrder.finalTotal || 0).toFixed(2)}</Text>
                 </View>
 
-                {/* FIXED RIDER LOGIC: If status isn't pending, show rider info */}
                 {selectedOrder.status !== 'pending' && (
                   <View style={styles.riderInfoBox}>
                     <Text style={styles.riderTitle}>Assigned Rider</Text>

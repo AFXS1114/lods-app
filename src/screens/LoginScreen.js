@@ -75,7 +75,7 @@ export default function LoginScreen({ navigation }) {
               <Text style={styles.brandLogo}>L</Text>
             </View>
             <Text style={styles.brandName}>LODS</Text>
-            <Text style={styles.tagline}>Swift Deliveries. Happy Customers.</Text>
+            <Text style={styles.tagline}>Lean On Us for All Your Delivery Needs!</Text>
           </View>
 
           {/* Login Card */}
